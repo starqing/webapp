@@ -1,0 +1,12 @@
+flask
+
+flask-sqlalchemy
+
+flask-debugtoolbar
+
+pymysql
+
+flask_script
+
+requests
+

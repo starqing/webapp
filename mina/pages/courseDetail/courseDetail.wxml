@@ -1,0 +1,29 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="my_container">
+	<view  class="list" >
+		<image mode="aspectFill" src="{{info.main_image}}" style='top:0rpx;'></image>
+		<view class="list_course">
+			<text>课程名称：{{ info.name }}</text>
+			<text>课程价格：{{ info.price }}</text>
+			<text>开课时间：{{ info.start_time }}</text>
+			<text>班级人数：{{ info.stock }}</text>
+    </view>
+    <view class="clear"></view>
+     <view class="in-title">课程简介</view>
+      <view class="list_content">
+				<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+		</view>
+  
+	</view>
+
+	<view class="button_view">
+		<button  size="default" open-type="share" title="分享可得佣金" plain="true" disabled="{{disabled}}"  hover-class="none" class="list_share" bindtap="btnClick_share">
+     <image style="height:60rpx;width:80rpx;" src='../../../image/fenxiang.png'></image>分享
+     </button>
+		<button  size="default"   disabled="{{disabled}}"  plain="true" hover-class="none" class="list_phone" bindtap="btnClick_phone" ><image style="height:60rpx;width:80rpx;" src='../../../image/icon-phone.png'> </image>电话</button>
+		<button size="default" type='primary'  disabled="{{disabled}}"  hover-class="none" class="list_btn" bindtap="btnClick" > 
+   立即报名</button>
+</view>
+
+
+</view>
