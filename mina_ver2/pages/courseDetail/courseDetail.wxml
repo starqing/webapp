@@ -1,0 +1,40 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="my_container">
+	<view id='course_img' style="padding-top: 0rpx; ">
+		<image mode="widthFix" src="{{info.main_image}}" style="margin: 0rpx; width: 100%; "></image>
+	</view>
+	<view id='course_name_view'><text id="course_name">{{info.name}}</text></view>
+	<view class='clear'></view>
+	<view id='price'><text id='txt1'>$998元</text> <text id='txt2'>$1998</text></view>
+	<view class='clear'></view>
+	<view id='course_Ge'>
+		<image mode="aspectFit" src="../../image/course_mark.png" id='icon_course'></image>
+		<view style="height: 3rpx;background-color:#DBDBDB ;"></view>
+		<view id='course_ge_content'>
+			<text class='course_detail'>吉他的曲调规律，让人感觉很理性，但是理性的同时又有种感性的冲动。</text>
+		</view>
+	</view>
+	<view style="height: 3rpx;background-color: #DBDBDB;"></view>
+	<view id='course_de'>
+		<view class="in-title">课程简介</view>
+		<view style="padding-left:20rpx ;padding-right: 20rpx;"><text class='course_detail'>吉他的曲调规律，让人感觉很理性，但是理性的同时又有种感性的冲动。无论何时，音乐都能让人平静，音乐的魅力在于百听不厌，让人心情舒畅，而且还可以缓解压力。上海爱乐吉他培训基地，为上海热爱吉他的朋友在音乐的世界里自由的畅想，因为我们给学员最灵活的时间和地点，为成都的音乐爱好者提供专业的教学服务平台，吉他培训科目：民谣吉他、电吉他、古典吉他、尤克里里培训，我中心常年开设少儿吉他基础班、成人兴趣小班、吉他VIP特色班，二十四教学区自由选择，我们主张：先试学满意再报名一对一愉快教学！让爱好音乐的你更开心的玩音乐</text>
+		</view>
+	</view>
+	<view style="height: 3rpxbaoming;background-color: #DBDBDB;margin-bottom: 10rpx;"></view>
+	<view class="in-title">时间安排</view>
+	<view id='course_time'><text class='course_detail'>2019年9月1日到2020年6月30日</text></view>
+	<view style="height: 3rpx;background-color: #DBDBDB;margin-bottom: 10rpx;"></view>
+	<view class="in-title">学习内容</view>
+	<view id='study_content' style="padding-left: 20rpx;padding-right: 20rpx;"><text class='course_detail'>吉他的曲调规律，让人感觉很理性，但是理性的同时又有种感性的冲动。</text></view>
+	<view class="in-title">备注说明</view>
+	<view id='beizhu' style="padding-left: 20rpx;padding-right: 20rpx;"><text class='course_detail'>最终解释权归天亿成音乐培训机构为主</text></view>
+	<view style="margin-bottom: 150rpx;"></view>
+	<view class='add_btn'>
+	
+		 <wux-button block outline type="balanced" size="default" class='wue-btn' bindtap="calling" ><wux-icon type="md-call" size="16" style="margin-left:10rpx ;" />电话</wux-button>
+		
+		 <wux-button block  outline type="balanced" size="default" class='wue-btn' open-type="share" ><wux-icon type="md-share" size="16" style="margin-left:10rpx ;" /> 分享</wux-button>
+
+		<wux-button block bordered="true" type="positive" size="default" class='wue-btn' bindtap="signup">预约报名</wux-button>
+	</view>
+</view>

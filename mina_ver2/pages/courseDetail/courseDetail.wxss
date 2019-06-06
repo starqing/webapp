@@ -1,0 +1,115 @@
+@import "/wxParse/wxParse.wxss"
+
+.my_container {
+
+	height: 100%;
+	display: float;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+
+.clear {
+	height: 20rpx;
+	margin: 0rpx;
+	padding: 0rpx;
+	background-color: #DBDBDB;
+}
+
+#course_name {
+	size: b3;
+	padding-left: 13rpx;
+	color: #00BFFF;
+	line-height: 40rpx;
+}
+
+#price {
+	height: 100rpx;
+	padding-left: 20rpx;
+	padding-top: 20rpx;
+}
+
+#txt1 {
+	color: red;
+	font-size: 50rpx;
+
+}
+
+#txt2 {
+	margin-left: 20rpx;
+	color: #999999;
+	text-decoration: line-through;
+
+}
+
+#course_Ge {
+	width: 100%;
+
+}
+
+#icon_course {
+
+	display: block;
+	width: 100rpx;
+	padding-left: 0rpx;
+	height: 50rpx;
+
+}
+
+.clear1 {
+	height: 15rpx;
+	margin: 0rpx;
+	padding: 0rpx;
+	background-color: #DBDBDB;
+}
+
+#course_ge_content {
+	padding-top: 7rpx;
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+
+}
+
+.in-title {
+	font-size: 32rpx;
+	font-family: "微软雅黑";
+	color: #333333;
+	line-height: 60rpx;
+	padding-left: 20rpx;
+	border-left: 10rpx solid #4ec4c8;
+	border-bottom: 1rpx solid #eeeeee;
+}
+
+.course_detail {
+	font-size: small;
+	width: 100%;
+	color: #666666;
+}
+
+.add_btn {
+	clear: both;
+	display: flex;
+	width: 100%;
+	position: fixed;
+	bottom: 0rpx;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-end;
+	padding: 0rpx;
+	margin: 0rpx;
+
+	
+}
+
+.wue-btn{
+
+	flex-grow: 1;
+	width: 30%;
+	height: 100rpx;
+	padding: 0rpx;
+	margin: 0rpx;
+	bottom:0rpx ;
+}
+

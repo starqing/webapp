@@ -1,0 +1,60 @@
+{
+  "pages": [
+		"pages/authorize/authorize",
+    "pages/index/index",
+    "pages/courseDetail/courseDetail",
+    "pages/signup/signup",
+    "pages/wode/wode",
+    "pages/about/about",
+    "pages/teacher/teacher",
+    "pages/teacherlist/teacherlist",
+		"pages/actionlist/actionlist",
+		"pages/order/order",
+		"pages/order_results/results"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#303030",
+    "navigationBarTitleText": "教育",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#4ec5c9",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "学校首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeactive.png"
+      },
+      {
+        "pagePath": "pages/signup/signup",
+        "text": "课程导航",
+        "iconPath": "image/bm.png",
+        "selectedIconPath": "image/bm_active.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "个人中心",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me_active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "联系我们",
+        "iconPath": "image/concat.png",
+        "selectedIconPath": "image/concat_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

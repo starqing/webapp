@@ -1,0 +1,57 @@
+<!--index.wxml-->
+ <wux-notice-bar loop speed="100" content="您好,您的课程已不足,请充值" />
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+	<block wx:for="{{imgUrls}}">
+		<swiper-item>
+			<image src="{{item}}" class="slide-image" />
+		</swiper-item>
+	</block>
+</swiper>
+
+<view class="plate">
+	<navigator url="/pages/signup/signup" open-type="switchTab" hover-class="other-navigator-hover" class="plate-item">
+		<view class="plate-img">
+			<image src="{{a2src}}"></image>
+		</view>
+		<text class="plate-info">
+			课程导航
+		</text>
+	</navigator>
+	<navigator url="/pages/teacher/teacher" hover-class="navigator-hover" class="plate-item">
+		<view class="plate-img">
+			<image src="{{a4src}}"></image>
+		</view>
+		<text class="plate-info">
+			教师简介
+		</text>
+	</navigator>
+	<navigator url="/pages/actionlist/actionlist" hover-class="navigator-hover" class="plate-item">
+		<view class="plate-img">
+			<image src="{{a5src}}"></image>
+		</view>
+		<text class="plate-info">
+			学员风采
+		</text>
+	</navigator>
+	<navigator url="/pages/actionlist/actionlist" hover-class="navigator-hover" class="plate-item">
+		<view class="plate-img">
+			<image src="{{a6src}}"></image>
+		</view>
+		<text class="plate-info">
+			钢琴展示
+		</text>
+	</navigator>
+</view>
+<wux-white-space size="small" />
+	<view class="app-title"><image src="../../image/annonce.png" mode="aspectFit" id='icon_annonce'></image><text style="margin-left: 30rpx;">通知公告</text></view>
+
+<wux-wing-blank body-style="margin-left: 20px; margin-right: 20px">
+<view class="appointment">
+	<wux-white-space size="large" />
+	<view class='img'><image src='http://127.0.0.1:8999/static/upload/20190426/d66ff378ab76498da33ea036c78f6aa8.jpg' mode="widthFix" style="margin: 0rpx,50rpx; width: 100%; "></image></view>
+	<wux-white-space size="" />
+	<view > <text id='notice_text'>\t神，结合我校实际，现就做好学校消防安全工作通知如下。</text></view>
+  <wux-white-space size="large" />
+</view>
+</wux-wing-blank>
+

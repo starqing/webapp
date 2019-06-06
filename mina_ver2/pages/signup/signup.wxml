@@ -1,0 +1,35 @@
+<wux-tabs controlled scroll current="{{ current }}" bindchange="onChange">
+            <wux-tab key="tab1" title="钢琴"></wux-tab>
+            <wux-tab key="tab2" title="吉他"></wux-tab>
+            <wux-tab key="tab3" title="Tab 3"></wux-tab>
+            <wux-tab key="tab4" title="Tab 4"></wux-tab>
+            <wux-tab key="tab5" title="Tab 5"></wux-tab>
+            <wux-tab key="tab6" title="Tab 6"></wux-tab>
+            <wux-tab key="tab7" title="Tab 7"></wux-tab>
+            <wux-tab key="tab8" title="Tab 8"></wux-tab>
+            <wux-tab key="tab9" title="Tab 9"></wux-tab>
+ </wux-tabs>
+<view class="appointment">
+  <view class="app-moduler">
+<block wx:for="{{goods}}">
+  <navigator url="/pages/courseDetail/courseDetail?id={{item.id}}" class="mod-item">
+      <view class="mod-signup">
+        <image src="{{signupimg}}"></image>
+      </view>
+      <view class="mod-img">
+        <image src="{{item.pic_url}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">
+         <text>{{item.name}}</text>
+      </view>
+      <view class="mod-info">
+        <view class="mod-icon">
+          <image src="{{iconsrc}}" class="icon"></image>
+        </view>
+        <view class="moinfont">{{item.totle}}人已申请</view>
+      </view>
+    </navigator>
+    </block>
+<view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">哥也是有底线的</view>
+   </view>
+</view>
