@@ -10,8 +10,8 @@
     "pages/teacherlist/teacherlist",
 		"pages/actionlist/actionlist",
 		"pages/order/order",
-		"pages/order_results/results"
-
+		"pages/order_results/results",
+		"pages/myorder/myorder"
   ],
   "window": {
     "backgroundTextStyle": "dark",

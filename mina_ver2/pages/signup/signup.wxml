@@ -1,13 +1,7 @@
 <wux-tabs controlled scroll current="{{ current }}" bindchange="onChange">
-            <wux-tab key="tab1" title="钢琴"></wux-tab>
-            <wux-tab key="tab2" title="吉他"></wux-tab>
-            <wux-tab key="tab3" title="Tab 3"></wux-tab>
-            <wux-tab key="tab4" title="Tab 4"></wux-tab>
-            <wux-tab key="tab5" title="Tab 5"></wux-tab>
-            <wux-tab key="tab6" title="Tab 6"></wux-tab>
-            <wux-tab key="tab7" title="Tab 7"></wux-tab>
-            <wux-tab key="tab8" title="Tab 8"></wux-tab>
-            <wux-tab key="tab9" title="Tab 9"></wux-tab>
+       <block wx:for="{{cats}}">
+				 <wux-tab key="{{item.id}}" title="{{item.name}}" bindtap='onclick' id="{{item.id}}"></wux-tab>
+			 </block>
  </wux-tabs>
 <view class="appointment">
   <view class="app-moduler">

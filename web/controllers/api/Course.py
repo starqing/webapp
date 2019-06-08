@@ -22,18 +22,46 @@ def course_index():
                 'pic_url':UrlManager.buildImageUrl( item.main_image ),
                 'food_name':item.name,
                 'total':item.total_count
-
             }
             data_food_list.append( tmp_data )
 
     resp['data']['banner_list'] = data_food_list
     return jsonify( resp )
 
+@route_api.route("/course/class",methods=["GET","POST"])
+def course_cat():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    query = FoodCat.query
+    query = query.filter(FoodCat.status == 1)
+    list = query.order_by(FoodCat.weight.desc(), FoodCat.id.desc()).all()
+    resp['data']['list']=list
+    temp_id=[]
+    temp_name=[]
+    if len(list)==0:
+        resp['msg']='没有课程！'
+        resp['code']='201'
+        return jsonify(resp)
+    data_food_list = []
+    if list:
+        for item in list:
+            tmp_data = {
+                'id': item.id,
+                'name': "%s" % (item.name),
+            }
+            data_food_list.append(tmp_data)
+    resp['data']['list'] = data_food_list
+    return jsonify(resp)
+
+
+
+
+
 
 @route_api.route("/course/search",methods = [ "GET","POST" ])
 def course_search():
     resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
     req = request.values
+    cat_id = int( req['cat_id'] ) if 'cat_id' in req else 0
     p = int(req['p']) if 'p' in req else 1
     if p < 1:
         p = 1
@@ -41,6 +69,8 @@ def course_search():
     page_size = 10
     offset = ( p - 1 ) * page_size
     query = Food.query.filter_by(status=1 )
+    if cat_id > 0:
+        query = query.filter_by(cat_id=cat_id)
     food_list = query.order_by(Food.total_count.desc(), Food.id.desc()) \
         .offset(offset).limit(page_size).all()
     data_food_list = []
