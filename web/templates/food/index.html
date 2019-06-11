@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a class="btn btn-w-m btn-outline btn-primary pull-right" href="{{ buildUrl('/food/set') }}">
-                        <i class="fa fa-plus"></i>美食
+                        <i class="fa fa-plus"></i>课程
                     </a>
                 </div>
             </div>
@@ -46,10 +46,11 @@
         <table class="table table-bordered m-t">
             <thead>
             <tr>
-                <th>美食名</th>
+                <th>课程名</th>
                 <th>分类</th>
                 <th>价格</th>
-                <th>库存</th>
+                <th>活动价格</th>
+                <th>课时</th>
                 <th>标签</th>
                 <th>操作</th>
             </tr>
@@ -61,6 +62,7 @@
                 <td>{{ item.name }}</td>
                 <td>{{ cat_mapping[ item.cat_id].name  }}</td>
                 <td>{{ item.price }}</td>
+                <td>{{ item.active_price }}</td>
                 <td>{{ item.stock }}</td>
                 <td>{{ item.tags }}</td>
                 <td>

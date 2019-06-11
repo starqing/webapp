@@ -1,6 +1,7 @@
 from web.controllers.api import route_api
 from flask import request,jsonify,g
 from application import app,db
+from datetime import date
 import requests,json
 from common.libs.UrlManager import UrlManager
 from common.libs.Helper import getCurrentDate,getDictFilterField,selectFilterObj
@@ -102,21 +103,31 @@ def Course_Info():
 
     if member_info:
         app.logger.info(member_info)
+    if isinstance(food_info.start_time,date):
+        start_time=datetime_toString(food_info.start_time)
+    else:
+        start_time = food_info.start_time
 
-    temp_time=food_info.start_time
-    if temp_time=='0000-00-00':
-        temp_time='无'
-    app.logger.info(type(temp_time))
+    if isinstance(food_info.end_time,date):
+        end_time=datetime_toString(food_info.end_time)
+    else:
+        end_time = food_info.end_time
+
     resp['data']['info'] = {
         "id":food_info.id,
         "name":food_info.name,
         "summary":food_info.summary,
         "total_count":food_info.total_count,
         "comment_count":food_info.comment_count,
-        "start_time":temp_time,
+        "start_time":start_time,
         'main_image':UrlManager.buildImageUrl( food_info.main_image ),
         "price":str( food_info.price ),
         "stock":food_info.stock,
-        "pics":[ UrlManager.buildImageUrl( food_info.main_image ) ]
+        "pics":[ UrlManager.buildImageUrl( food_info.main_image ) ],
+        "active_price":str( food_info.active_price ),
+        "tags":food_info.tags,
+        "study_content":food_info.study_content,
+        "end_time":end_time,
+        "signal_price":str(food_info.signal_price)
     }
     return jsonify(resp)

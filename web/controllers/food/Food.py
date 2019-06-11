@@ -130,12 +130,15 @@ def set():
     cat_id = int(req['cat_id']) if 'cat_id' in req else 0
     name = req['name'] if 'name' in req else ''
     price = req['price'] if 'price' in req else ''
+    active_price = req['active_price'] if 'active_price' in req else ''
+    signal_price = req['signal_price'] if 'signal_price' in req else ''
     main_image = req['main_image'] if 'main_image' in req else ''
     summary = req['summary'] if 'summary' in req else ''
+    study_content = req['study_content'] if 'study_content' in req else ''
     stock = int(req['stock']) if 'stock' in req else ''
     tags = req['tags'] if 'tags' in req else ''
     date_time = req['date_time'] if 'date_time' in req else ''
-
+    end_time = req['end_time'] if 'end_time' in req else ''
     if cat_id < 1:
         resp['code'] = -1
         resp['msg'] = "请选择分类~~"
@@ -150,11 +153,22 @@ def set():
         resp['code'] = -1
         resp['msg'] = "请输入符合规范的售卖价格~~"
         return jsonify(resp)
-
+    if active_price=='None':
+        active_price=price
     price = Decimal(price).quantize(Decimal('0.00'))
+    active_price = Decimal(active_price).quantize(Decimal('0.00'))
+    signal_price = Decimal(signal_price).quantize(Decimal('0.00'))
     if  price <= 0:
         resp['code'] = -1
         resp['msg'] = "请输入符合规范的售卖价格~~"
+        return jsonify(resp)
+    if  active_price <= 0:
+        resp['code'] = -1
+        resp['msg'] = "请输入符合规范的活动售卖价格~~"
+        return jsonify(resp)
+    if  signal_price <= 0:
+        resp['code'] = -1
+        resp['msg'] = "请输入符合规范的活动售卖价格~~"
         return jsonify(resp)
 
     if main_image is None or len(main_image) < 3:
@@ -164,12 +178,16 @@ def set():
 
     if summary is None or len(summary) < 3:
         resp['code'] = -1
-        resp['msg'] = "请输入图书描述，并不能少于10个字符~~"
+        resp['msg'] = "请输入课程描述，并不能少于10个字符~~"
+        return jsonify(resp)
+    if study_content is None or len(study_content) < 3:
+        resp['code'] = -1
+        resp['msg'] = "请输入课程内容，并不能少于10个字符~~"
         return jsonify(resp)
 
     if stock < 1:
         resp['code'] = -1
-        resp['msg'] = "请输入符合规范的库存量~~"
+        resp['msg'] = "请输入符合规范的课时量~~"
         return jsonify(resp)
 
     if tags is None or len(tags) < 1:
@@ -179,6 +197,10 @@ def set():
     if date_time is None or len(date_time) < 1:
         resp['code'] = -1
         resp['msg'] = "请输入开课时间，便于搜索~~"
+        return jsonify(resp)
+    if end_time is None or len(end_time) < 1:
+        resp['code'] = -1
+        resp['msg'] = "请输入课程结束时间，便于搜索~~"
         return jsonify(resp)
 
 
@@ -196,12 +218,16 @@ def set():
     model_food.cat_id = cat_id
     model_food.name = name
     model_food.price = price
+    model_food.active_price = active_price
     model_food.main_image = main_image
     model_food.summary = summary
     model_food.stock = stock
     model_food.tags = tags
     model_food.updated_time = getCurrentDate()
     model_food.start_time=date_time
+    model_food.study_content=study_content
+    model_food.signal_price=signal_price
+    model_food.end_time=end_time
 
     db.session.add(model_food)
     ret = db.session.commit()

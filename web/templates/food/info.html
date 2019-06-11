@@ -22,8 +22,9 @@
             <div class="col-lg-12">
                 <p class="m-t">美食名：{{ info.name }}</p>
                 <p>售价：{{ info.price }}</p>
-                <p>库存总量：{{ info.stock }}</p>
-                <p>图书标签：{{ info.tags }}</p>
+                <p>活动售价：{{ info.active_price }}</p>
+                <p>课时：{{ info.stock }}</p>
+                <p>课程标签：{{ info.tags }}</p>
                 <p>开课日期：{{ info.start_time }}</p>
                 <p>封面图：<img src="{{ buildImageUrl( info.main_image ) }}" style="width: 50px;height: 50px;"></p>
                 <p>描述：</p>
@@ -41,7 +42,7 @@
                                     <a href="#tab-1" data-toggle="tab" aria-expanded="false">销售历史</a>
                                 </li>
                                 <li>
-                                    <a href="#tab-2" data-toggle="tab" aria-expanded="true">库存变更</a>
+                                    <a href="#tab-2" data-toggle="tab" aria-expanded="true">课时变更</a>
                                 </li>
                             </ul>
                         </div>
