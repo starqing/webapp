@@ -107,7 +107,6 @@ def Course_Info():
         start_time=datetime_toString(food_info.start_time)
     else:
         start_time = food_info.start_time
-
     if isinstance(food_info.end_time,date):
         end_time=datetime_toString(food_info.end_time)
     else:

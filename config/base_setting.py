@@ -42,4 +42,5 @@ UPLOAD = {
 }
 APP = {
     'domain':'http://127.0.0.1:8999'
+    # 'domain':'https://weixin.xsstest.top'
 }
